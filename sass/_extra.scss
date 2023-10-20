@@ -1,0 +1,350 @@
+@use "../sass/variables" as *;
+@use "../sass/mixins" as *;
+.wrap {
+  padding-top: 4rem;
+  .container {
+    justify-content: space-between;
+    gap: 35px;
+  }
+}
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 100%;
+  // width: ;
+  max-width: 100%;
+  background-color: #1d1c21;
+  padding: 40px;
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 80%;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    gap: 30px;
+    @include breakAt(xl) {
+      display: none;
+    }
+  }
+  .name {
+    flex: 1 40%;
+    @include breakAt(xl) {
+      flex: 1 100%;
+    }
+  }
+  h2 {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 50px;
+  }
+  p {
+    font-family: $font-secondary;
+  }
+  h4 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+  .choose {
+    flex: 1 40%;
+    padding: 0 20px 20px 60px;
+    @include breakAt(xl) {
+      padding-left: 0;
+    }
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    font-family: $font-secondary;
+    list-style: none;
+    color: $gray;
+    padding: 8px 6px;
+    border: 1px solid $primary;
+    margin: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary;
+      color: white;
+    }
+  }
+}
+.special img {
+  max-width: 100%;
+  width: 100%;
+}
+.logo {
+  width: 60%;
+}
+.second-nav.about {
+  @include breakAt(md) {
+    padding: 30px 0 !important;
+  }
+}
+.wrap .search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  @include breakAt(md) {
+    padding-left: 0;
+    margin: 0;
+  }
+  input {
+    color: $gray;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #2f2e35;
+    height: 20px;
+    width: 400px;
+    padding: 25px;
+    font-size: 18px;
+    font-family: $font-secondary;
+    transition: 0.3s;
+    cursor: text;
+    @include breakAt(md) {
+      width: 100%;
+    }
+  }
+  i {
+    height: 20px;
+    border: 1px solid #2f2e35;
+    padding: 25px;
+    line-height: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: $primary;
+    }
+  }
+  .content {
+    max-width: 70%;
+    margin-top: 4rem;
+    margin-left: 10%;
+    @include breakAt(md) {
+      margin: auto;
+      margin-top: 0;
+    }
+    @include breakAt(sm) {
+      margin: 0;
+      width: 100%;
+      padding: 20px;
+      max-width: 100%;
+    }
+    counter-reset: p;
+  }
+}
+.special .first {
+  img {
+    width: 100%;
+  }
+  flex-basis: 60% !important;
+  @include breakAt(lg) {
+    flex-basis: 100% !important;
+  }
+}
+.special .second {
+  img {
+    width: 100% !important;
+  }
+  flex-basis: 40% !important;
+  @include breakAt(lg) {
+    flex-basis: 100% !important;
+  }
+}
+.soecial .box {
+  margin-bottom: 70px;
+}
+.wrap .btn {
+  margin-top: 31px !important;
+}
+.wrap .second {
+  text-align: initial !important;
+}
+
+.post .first {
+  flex-basis: 80% !important;
+  @include breakAt(lg) {
+    flex-basis: 100% !important;
+  }
+}
+section .container.post {
+  @include breakAt(md) {
+    padding: 0;
+  }
+}
+
+section .container.post .first {
+  .quote {
+    background-color: #1d1c21;
+    padding: 30px 60px;
+    font-family: $font-secondary;
+    @include breakAt(md) {
+      padding: 30px 48px;
+    }
+    p {
+      position: relative;
+      color: $gray;
+      font-size: 24px;
+      line-height: 1.7;
+      width: fit-content;
+      @include breakAt(md) {
+        font-size: 14px;
+      }
+      &::before {
+        content: open-quote;
+        position: absolute;
+        left: -40px;
+        top: 25px;
+        color: $primary;
+        font-size: 70px;
+        line-height: 0;
+        @include breakAt(md) {
+          font-size: 40px;
+          top: 0;
+        }
+      }
+      &::after {
+        content: close-quote;
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        color: $primary;
+        font-size: 70px;
+        line-height: 0;
+        @include breakAt(md) {
+          font-size: 40px;
+          bottom: 0;
+        }
+      }
+    }
+    span {
+      position: relative;
+      font-size: 20px;
+      margin-left: 25px;
+      @include breakAt(md) {
+        font-size: 15px;
+      }
+      &::before {
+        content: "\2014\00A0";
+        position: absolute;
+        left: -25px;
+      }
+    }
+  }
+}
+
+@include breakAt(md) {
+  .second-nav:not(.padd) {
+    padding: 30px 0 !important;
+  }
+}
+.wrap .widget {
+  color: $gray;
+  margin: 40px 0;
+ 
+  h1{
+    font-size:48px ;
+    @include breakAt(md){
+      font-size:38px ;
+    }
+  }
+  h2{
+    font-size:36px ;
+    @include breakAt(md){
+      font-size:28px ;
+    }
+  }
+  h3{
+    font-size:24px ;
+    @include breakAt(md){
+      font-size:20px ;
+    }
+  }
+  h4{
+    font-size:20px ;
+  }
+  h5{
+    font-size:18px ;
+  }
+  h6{
+    font-size:15px ;
+  }
+  .heading {
+    margin-bottom: 50px !important;
+    color: white;
+    position: relative;
+    width: fit-content;
+    margin: 0 0 30px;
+    transition: 0.3s;
+    font-weight: 500;
+    cursor: initial;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background-color: $primary;
+      left: 0;
+      bottom: -15px;
+    }
+  }
+  .barlow {
+    font-family: $font-primary;
+  }
+  .mont {
+    font-family: $font-secondary;
+  }
+  .barlow,
+  .mont {
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  p{
+    font-family: $font-secondary;
+  }
+}
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+
+}
+table{
+  width: 100%;
+  thead td{
+    font-size: 24px;
+    font-family: $font-primary;
+  }
+  td{
+    text-align: center;
+    color: white;
+    padding: 15px 0;
+    font-size: 16px;
+    font-family: $font-secondary;
+  }
+}
+.colors{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  text-align: center;
+  .color{
+    flex-basis:  20%;
+    @include breakAt(sm){
+      flex-basis:  100%;
+    }
+    background-color: #1d1c21;
+    .top{
+      height: 100px;
+    }
+    p{
+      padding: 10px;
+    }
+  }
+}

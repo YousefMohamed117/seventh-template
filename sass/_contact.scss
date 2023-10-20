@@ -1,0 +1,108 @@
+@use "../sass/variables" as *;
+@use "../sass/mixins" as *;
+
+.contact-main {
+  margin: 30px auto 70px;
+}
+
+.form {
+  width: 100%;
+  background-color: #1d1c21;
+  padding: 80px;
+  font-family: $font-secondary;
+  h2 {
+    margin-top: 0;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 65px;
+    column-gap: 41px;
+    .box {
+      flex: 1 40%;
+      &:last-of-type {
+        flex: 100%;
+      }
+      &.special {
+        input {
+          padding: 0 0 120px 0;
+        }
+      }
+    }
+    label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+    input,
+    select {
+      width: 100%;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #333139;
+      transition: 0.3s;
+      &:focus {
+        border-color: #888888 !important;
+      }
+      padding: 0 0 15px;
+      background-color: transparent;
+      color: $gray;
+      cursor: text;
+    }
+    option {
+      background-color: #1d1c21;
+      color: $gray;
+      padding: 15px;
+    }
+  }
+  input[type="submit"] {
+    font-size: 14px;
+    color: white;
+    padding: 17px 25px;
+    margin-top: 20px;
+    background-color: $primary;
+    padding: 10px 25px;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: fit-content;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(228, 17, 47, 0.7);
+      i {
+        margin-left: 35px;
+      }
+    }
+    &:active {
+      background-color: #0062cc;
+    }
+  }
+}
+footer {
+  margin-top: 0 !important;
+}
+@include breakAt(lg) {
+  .second-nav img {
+    width: 80%;
+  }
+  .form {
+    margin-left: 0;
+  }
+}
+@include breakAt(xl) {
+  .form {
+    padding: 40px;
+  }
+}
+@include breakAt(md) {
+  .form form .box {
+    flex: 1 100%;
+  }
+  .second-nav img {
+    width: 100px;
+  }
+}
